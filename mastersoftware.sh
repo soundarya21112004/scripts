@@ -15,6 +15,8 @@ apt-get install -y \
 # Update the package list
 apt update
 
+sudo apt upgrade -y
+
 # Install Python 3
 apt install -y python3
 
@@ -64,7 +66,7 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docke
 
 # Update the package list to include Docker packages
 apt-get update
-
+sudo apt upgrade -y
 # Install Docker Engine, CLI, and containerd
 apt-get install -y docker-ce docker-ce-cli containerd.io
 

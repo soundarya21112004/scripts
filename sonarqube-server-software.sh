@@ -6,8 +6,8 @@ SONARQUBE_VERSION="9.9.1.69595"
 # Ensure dependencies are installed
 echo "Installing dependencies..."
 apt update && apt install -y openjdk-17-jdk fontconfig jq \
-    apt-transport-https ca-certificates curl gnupg lsb-release wget || { echo "Dependency installation failed"; exit 1; }
-
+    apt-transport-https ca-certificates curl gnupg lsb-release wget unzip || { echo "Dependency installation failed"; exit 1; }
+sudo apt upgrade -y
 # AWS Configure (optional, remove if not needed)
 CONFIG_FILE="aws_config.json"
 if [ -f "$CONFIG_FILE" ]; then

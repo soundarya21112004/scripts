@@ -9,8 +9,8 @@ fi
 # Ensure dependencies are installed
 echo "Installing essential dependencies..."
 apt update && apt install -y awscli jq \
-    apt-transport-https ca-certificates curl gnupg lsb-release wget || { echo "Dependency installation failed"; exit 1; }
-
+    apt-transport-https ca-certificates curl gnupg lsb-release wget unzip || { echo "Dependency installation failed"; exit 1; }
+sudo apt upgrade -y
 # Install Python 3 and pip
 echo "Installing Python 3 and pip..."
 apt install -y python3 python3-pip || { echo "Python 3 or pip installation failed"; exit 1; }
@@ -53,7 +53,7 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" > /etc/apt/sources.list.d/docker.list
 
 apt update && apt install -y docker-ce docker-ce-cli containerd.io || { echo "Docker installation failed"; exit 1; }
-
+sudo apt upgrade -y
 # Enable and start Docker service
 echo "Enabling and starting Docker service..."
 systemctl enable docker

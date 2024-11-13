@@ -2,10 +2,11 @@
 
 # Ensure dependencies are installed
 apt update && apt install -y awscli jq \
-    apt-transport-https ca-certificates curl gnupg lsb-release wget
+    apt-transport-https ca-certificates curl gnupg lsb-release wget unzip
 
 # Update the package list
 apt update
+sudo apt upgrade -y
 
 # Install Python 3
 apt install -y python3
@@ -48,6 +49,7 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" > /etc/apt/sources.list.d/docker.list
 
 apt update && apt install -y docker-ce docker-ce-cli containerd.io
+sudo apt upgrade -y
 
 # Enable and start Docker service
 systemctl enable docker
