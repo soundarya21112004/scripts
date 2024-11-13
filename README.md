@@ -4,7 +4,7 @@
    Clone the required scripts repository from GitHub to your local machine.
 
    ```
-
+   https://github.com/venkatravi260719942/scrips.git
    ```
 
 2. **Set Full Permissions**:  
