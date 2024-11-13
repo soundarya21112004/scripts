@@ -1,20 +1,7 @@
 pipeline {
-    agent any
-
-    environment {
-        GITHUB_REPO = 'git@github.com:venkatravi260719942/scrips.git'  // Replace with your repository URL
-    }
+    agent { label 'slave' }
 
     stages {
-        stage('Clone Scripts') {
-            steps {
-                script {
-                    echo 'Cloning repository from GitHub...'
-                    sh 'git clone ${GITHUB_REPO}'
-                }
-            }
-        }
-
         stage('Set Permissions') {
             steps {
                 script {
