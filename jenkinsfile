@@ -21,6 +21,7 @@ pipeline {
                     echo 'Setting full permissions for all scripts...'
                     sh 'chmod 777 *.sh'
                     sh 'chmod 777 *.json'
+                    sh 'chmod 400 test.pem'
                 }
             }
         }
